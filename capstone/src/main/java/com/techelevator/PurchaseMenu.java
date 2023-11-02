@@ -13,11 +13,19 @@ public class PurchaseMenu {
     private Menu menu;
 
 
-    public PurchaseMenu(Menu menu) {
+   /* public PurchaseMenu(Menu menu) {
         this.menu = menu;
     }
 
-    public void run() {
+    */
+
+   /* public PurchaseMenu(){
+        this.menu = menu;
+    }
+
+    */
+
+    public void runPurchase() {
        // public void onEnter () {
 
 

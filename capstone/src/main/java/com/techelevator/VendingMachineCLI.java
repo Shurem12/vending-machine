@@ -10,7 +10,7 @@ public class VendingMachineCLI {
 
 	private Menu menu;
 
-	private PurchaseMenu pm;
+	private PurchaseMenu pm = new PurchaseMenu();
 
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
@@ -25,6 +25,9 @@ public class VendingMachineCLI {
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				// do purchase
 
+				pm.runPurchase();
+
+
 			}
 		}
 	}
@@ -32,10 +35,9 @@ public class VendingMachineCLI {
 	public static void main(String[] args) {
 		Menu menu = new Menu(System.in, System.out);
 		VendingMachineCLI cli = new VendingMachineCLI(menu);
-		PurchaseMenu pm=new PurchaseMenu(menu);
-
+		//PurchaseMenu pm = new PurchaseMenu(menu);
 		cli.run();
-		pm.run();
+
 
 	}
 }
