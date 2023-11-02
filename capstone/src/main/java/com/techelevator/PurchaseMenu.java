@@ -13,11 +13,11 @@ public class PurchaseMenu {
     private Menu menu = new Menu(System.in, System.out);
 
 
-    public PurchaseMenu(Menu menu) {
-        this.menu = menu;
-    }
+    //public PurchaseMenu(Menu menu) {
+      //  this.menu = menu;
+    //}
 
-    public void run() {
+    public void runPurchase() {
        // public void onEnter () {
 
 
