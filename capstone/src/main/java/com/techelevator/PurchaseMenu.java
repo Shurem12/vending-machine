@@ -4,7 +4,7 @@ import com.techelevator.view.Menu;
 
 import java.util.Scanner;
 
-public class PurchaseMenu {
+public class PurchaseMenu extends Inventory {
 
     private static final String PURCHASE_MENU_FEED_MONEY = "Feed money";
     private static final String PURCHASE_MENU_SELECT_PRODUCT = "Select product";
@@ -21,6 +21,10 @@ public class PurchaseMenu {
     //public PurchaseMenu(Menu menu) {
       //  this.menu = menu;
     //}
+
+    public void runInventory(){
+
+    }
 
     public void runPurchase() {
        // public void onEnter () {

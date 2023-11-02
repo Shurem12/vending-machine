@@ -1,15 +1,12 @@
 package com.techelevator;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class VendingMachine extends Inventory {
+public class Inventory {
 
-   // ArrayList<String> inventory = new ArrayList<>();
 
-   private Food totalAvailable = new Food();
-
+    private Food totalAvailable = new Food();
     private String itemLocation;
     private String itemName;
     private String itemCost;
@@ -26,15 +23,16 @@ public class VendingMachine extends Inventory {
         return itemCost;
     }
 
-    String fileName ="vendingmachine.csv";
+    String fileName = "vendingmachine.csv";
 
     File file = new File(fileName);
 
+
     public void runInventory() {
 
-        /*try (Scanner fileReader = new Scanner(file)) {
+        try (Scanner fileReader = new Scanner(file)) {
 
-            while(fileReader.hasNextLine()) {
+            while (fileReader.hasNextLine()) {
 
                 String line = fileReader.nextLine();
 
@@ -49,40 +47,22 @@ public class VendingMachine extends Inventory {
                 // String itemType = inv[3];
 
                 //for(int i=1; i<inv.length;i++){
-
-         */
-                super.runInventory();
-                //System.out.println(super.getItemLocation() + " " + super.getItemName() + " " + super.getItemCost() + " " + "Available: " + totalAvailable.getStock());
-
-
-
-
-           // }
-
-
-
-               // System.out.println(inventory);
+                //System.out.println(itemLocation + " " + itemName + " " + itemCost + " " + "Available: " + totalAvailable.getStock());
 
 
 
             }
 
 
-/*
-        } catch(Exception ex){
+        } catch (Exception ex) {
 
             System.out.println("Unable to read file.");
         }
-    }
 
- */
+
+    }
 
 
 
 
 }
-
-
-
-
-
