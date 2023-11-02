@@ -8,7 +8,25 @@ public class VendingMachine {
 
     ArrayList<String> inventory = new ArrayList<>();
 
-    String fileName ="C:\\Users\\Tech Elevator IT\\workspace\\oct-blue-capstone-1-team-9\\capstone\\vendingmachine.csv";
+    private Food totalAvailable = new Food();
+
+    private String itemLocation;
+    private String itemName;
+    private String itemCost;
+
+    public String getItemLocation() {
+        return itemLocation;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public String getItemCost() {
+        return itemCost;
+    }
+
+    String fileName ="vendingmachine.csv";
 
     File file = new File(fileName);
 
@@ -31,7 +49,8 @@ public class VendingMachine {
                 // String itemType = inv[3];
 
                 //for(int i=1; i<inv.length;i++){
-                System.out.println(itemLocation + " " + itemName + " " + itemCost);
+                System.out.println(itemLocation + " " + itemName + " " + itemCost + " " + "Available: " + totalAvailable.getStock());
+
 
 
            // }
