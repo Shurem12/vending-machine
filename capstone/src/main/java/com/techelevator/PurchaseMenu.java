@@ -35,8 +35,11 @@ public class PurchaseMenu {
 
             if (choice.equals(PURCHASE_MENU_FEED_MONEY)) {
                 // display vending machine items
+                System.out.println("Here it is.");
+
             } else if (choice.equals(PURCHASE_MENU_SELECT_PRODUCT)) {
                 // do purchase
+
             } else if (choice.equals(PURCHASE_FINISH_TRANSACTION)) {
                 break;
             }
