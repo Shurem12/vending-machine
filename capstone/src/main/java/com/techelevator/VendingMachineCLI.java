@@ -11,6 +11,8 @@ public class VendingMachineCLI {
 
 	private Menu menu;
 
+	private PurchaseMenu pm = new PurchaseMenu();
+
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
 	}
@@ -23,8 +25,10 @@ public class VendingMachineCLI {
 				// display vending machine items
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				// do purchase
-			}else if(choice.equals(MAIN_MENU_OPTION_EXIT)){
-				break;
+
+				pm.runPurchase();
+
+
 			}
 		}
 	}
@@ -32,6 +36,9 @@ public class VendingMachineCLI {
 	public static void main(String[] args) {
 		Menu menu = new Menu(System.in, System.out);
 		VendingMachineCLI cli = new VendingMachineCLI(menu);
+		//PurchaseMenu pm = new PurchaseMenu(menu);
 		cli.run();
+
+
 	}
 }
