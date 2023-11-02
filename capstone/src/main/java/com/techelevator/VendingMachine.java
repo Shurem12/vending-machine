@@ -8,26 +8,37 @@ public class VendingMachine {
 
     ArrayList<String> inventory = new ArrayList<>();
 
-    String fileName = "C:\\Users\\Student\\workspace\\oct-blue-capstone-1-team-9\\capstone\\vendingmachine.csv";
+    String fileName ="C:\\Users\\Tech Elevator IT\\workspace\\oct-blue-capstone-1-team-9\\capstone\\vendingmachine.csv";
 
     File file = new File(fileName);
 
-    public void run() {
+    public void runInventory() {
 
         try (Scanner fileReader = new Scanner(file)) {
 
-            while(fileReader.hasNextLine()){
+            while(fileReader.hasNextLine()) {
 
                 String line = fileReader.nextLine();
 
                 String[] inv = line.split("\\|");
 
-                inventory.add(line);
+
+                //inventory.add(line);
 
                 String itemLocation = inv[0];
                 String itemName = inv[1];
                 String itemCost = inv[2];
-                String itemType = inv[3];
+                // String itemType = inv[3];
+
+                //for(int i=1; i<inv.length;i++){
+                System.out.println(itemLocation + " " + itemName + " " + itemCost);
+
+
+           // }
+
+
+
+               // System.out.println(inventory);
 
 
 
@@ -49,4 +60,4 @@ public class VendingMachine {
 
 
 
-}
+
