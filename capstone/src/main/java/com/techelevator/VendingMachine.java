@@ -10,6 +10,7 @@ public class VendingMachine extends Inventory {
 
    private Food totalAvailable = new Food();
 
+   /*
     private String itemLocation;
     private String itemName;
     private String itemCost;
@@ -26,13 +27,18 @@ public class VendingMachine extends Inventory {
         return itemCost;
     }
 
-    String fileName ="vendingmachine.csv";
+    */
 
-    File file = new File(fileName);
+   // String fileName ="vendingmachine.csv";
+
+    //File file = new File(fileName);
 
     public void runInventory() {
 
-        /*try (Scanner fileReader = new Scanner(file)) {
+        /*
+    }
+
+        try (Scanner fileReader = new Scanner(file)) {
 
             while(fileReader.hasNextLine()) {
 
@@ -51,8 +57,22 @@ public class VendingMachine extends Inventory {
                 //for(int i=1; i<inv.length;i++){
 
          */
-                super.runInventory();
-                //System.out.println(super.getItemLocation() + " " + super.getItemName() + " " + super.getItemCost() + " " + "Available: " + totalAvailable.getStock());
+
+
+
+
+
+               for(int i = 1; i < getInventoryList().size(); i++) {
+
+                    super.runInventory();
+
+        System.out.println(getInventoryList().get(i));
+
+                   // System.out.println(getItemLocation() + " " + getItemName() + " " + getItemCost() + " " + "Available: " + totalAvailable.getStock());
+
+               }
+
+
 
 
 

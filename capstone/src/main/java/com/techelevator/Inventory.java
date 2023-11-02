@@ -1,6 +1,8 @@
 package com.techelevator;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Inventory {
@@ -10,6 +12,18 @@ public class Inventory {
     private String itemLocation;
     private String itemName;
     private String itemCost;
+    private List<String> inventoryList = new ArrayList<>();
+
+    public List<String> getInventoryList() {
+        return inventoryList;
+    }
+
+
+    private String[] inv;
+
+    public String[] getInv() {
+        return inv;
+    }
 
     public String getItemLocation() {
         return itemLocation;
@@ -22,6 +36,8 @@ public class Inventory {
     public String getItemCost() {
         return itemCost;
     }
+
+
 
     String fileName = "vendingmachine.csv";
 
@@ -36,19 +52,22 @@ public class Inventory {
 
                 String line = fileReader.nextLine();
 
-                String[] inv = line.split("\\|");
+                inv = line.split("\\|");
 
 
-                //inventory.add(line);
+               inventoryList.add(line);
 
-                String itemLocation = inv[0];
-                String itemName = inv[1];
-                String itemCost = inv[2];
+                 itemLocation = inv[0];
+                 itemName = inv[1];
+                 itemCost = inv[2];
                 // String itemType = inv[3];
+
+
+
+
 
                 //for(int i=1; i<inv.length;i++){
                 //System.out.println(itemLocation + " " + itemName + " " + itemCost + " " + "Available: " + totalAvailable.getStock());
-
 
 
             }
@@ -60,9 +79,22 @@ public class Inventory {
         }
 
 
+        /*
+    }
+    public String getItemLocation() {
+        return itemLocation;
     }
 
+    public String getItemName() {
+        return itemName;
+    }
+
+    public String getItemCost() {
+        return itemCost;
+    }
+
+         */
 
 
-
+    }
 }

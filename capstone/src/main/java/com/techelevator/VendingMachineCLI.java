@@ -14,7 +14,7 @@ public class VendingMachineCLI {
 
 	private PurchaseMenu pm = new PurchaseMenu();
 
-	private VendingMachine vm=new VendingMachine();
+	private VendingMachine vm= new VendingMachine();
 
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
