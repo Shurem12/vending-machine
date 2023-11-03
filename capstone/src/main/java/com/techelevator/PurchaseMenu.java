@@ -19,6 +19,8 @@ public class PurchaseMenu extends Inventory {
     private Food food = new Food();
     private Inventory invList = new Inventory();
 
+    private VendingMachine vm= new VendingMachine();
+
 
     //public PurchaseMenu(Menu menu) {
       //  this.menu = menu;
@@ -51,6 +53,7 @@ public class PurchaseMenu extends Inventory {
 
 
             } else if (choice.equals(PURCHASE_MENU_SELECT_PRODUCT)) {
+                vm.runInventory();
 
                 System.out.println("Please enter item number: ");
                 String userSelection = userInput.nextLine();
