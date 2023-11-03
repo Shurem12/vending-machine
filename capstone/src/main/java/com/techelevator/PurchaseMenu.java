@@ -41,17 +41,22 @@ public class PurchaseMenu extends Inventory {
 
             if (choice.equals(PURCHASE_MENU_FEED_MONEY)) {
                 // display vending machine items
-                System.out.println("Please enter money");
+                System.out.println("Please enter your money.  Bills only please.");
 
                 String moneyInput = userInput.nextLine();
+               Double moneyInputDouble = Double.parseDouble(moneyInput);
 
-                Double moneyInputNumber = Double.parseDouble(moneyInput);
-                customer.addMoney(moneyInputNumber);
-
-
+                if(moneyInputDouble == 1 || ((moneyInputDouble % 2 == 0)) || ((moneyInputDouble % 3 == 0) || ((moneyInputDouble % 5 == 0)) || ((moneyInputDouble % 7 == 0) && moneyInputDouble <= 10))) {
 
 
-                System.out.println("Current available funds: " + customer.getBalance());
+                    Double moneyInputNumber = Double.parseDouble(moneyInput);
+                    customer.addMoney(moneyInputNumber);
+
+
+                    System.out.println("Current available funds: " + customer.getBalance());
+                } else if(!(moneyInputDouble == 1) || !((moneyInputDouble % 2 == 0)) || !((moneyInputDouble % 3 == 0))){
+                    System.out.println("Please enter whole dollar amounts.");
+                }
 
 
             } else if (choice.equals(PURCHASE_MENU_SELECT_PRODUCT)) {
@@ -96,7 +101,7 @@ public class PurchaseMenu extends Inventory {
                 int changeToInt = customer.getBalance().intValue();
                 customer.makeChange(changeToInt);
                 System.out.println("Here is your change total: " + customer.getBalance());
-                System.out.println("Here is your change in quarters: " + customer.getTotalQuarters() + " in dimes: " + customer.getTotalDimes() + " in nickles " + customer.getTotalNickles());
+                System.out.println("Here is your change in quarters: " + customer.getTotalQuarters() + " in dimes: " + customer.getTotalDimes() + " in nickles: " + customer.getTotalNickles());
                 customer.resetBalance();
                 break;
             }

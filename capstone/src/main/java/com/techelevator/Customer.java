@@ -64,14 +64,19 @@ public void makeChange(int change){
 
 
        Double coinValue =  balance * 100;
-       if(coinValue % 25 == 0){
-           totalQuarters = (int) (coinValue / 25);
+       while(coinValue >= 25){
+           coinValue -= 25;
+           totalQuarters++;
+       } while(coinValue >= 10){
 
-       } else if(coinValue % 10 == 0){
-           totalDimes = (int) (coinValue / 10);
-       } else if(coinValue % 5 == 0){
-           totalNickles = (int) (coinValue / 5);
+           coinValue -= 10;
+           totalDimes++;
+
+       } while(coinValue >= 5){
+           coinValue -= 5;
+           totalNickles++;
        }
+
 
 
 
