@@ -2,6 +2,7 @@ package com.techelevator;
 
 import com.techelevator.view.Menu;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class PurchaseMenu extends Inventory {
@@ -21,6 +22,8 @@ public class PurchaseMenu extends Inventory {
 
     private VendingMachine vm= new VendingMachine();
     private Customer customer = new Customer();
+
+
 
 
     //public PurchaseMenu(Menu menu) {
@@ -52,8 +55,8 @@ public class PurchaseMenu extends Inventory {
                     Double moneyInputNumber = Double.parseDouble(moneyInput);
                     customer.addMoney(moneyInputNumber);
 
-
                     System.out.println("Current available funds: " + customer.getBalance());
+
                 } else if(!(moneyInputDouble == 1) || !((moneyInputDouble % 2 == 0)) || !((moneyInputDouble % 3 == 0))){
                     System.out.println("Please enter whole dollar amounts.");
                 }
