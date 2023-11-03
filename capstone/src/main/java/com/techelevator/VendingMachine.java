@@ -65,11 +65,19 @@ public class VendingMachine extends Inventory {
                for(int i = 0; i < getInventoryList().size(); i++) {
 
 
+
+
+
                      System.out.println(getInventoryList().get(i));
+
 
                    // System.out.println(getItemLocation() + " " + getItemName() + " " + getItemCost() + " " + "Available: " + totalAvailable.getStock());
 
                }
+
+
+
+
 
 
 

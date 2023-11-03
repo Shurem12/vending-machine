@@ -57,6 +57,7 @@ public class Inventory {
 
                inventoryList.add(line);
 
+
                  itemLocation = inv[0];
                  itemName = inv[1];
                  itemCost = inv[2];

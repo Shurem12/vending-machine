@@ -44,6 +44,7 @@ public class PurchaseMenu extends Inventory {
 
                 moneyInputTotal += moneyInputNumber;
 
+
                 System.out.println("Current available funds: " + moneyInputTotal);
 
 
@@ -51,6 +52,7 @@ public class PurchaseMenu extends Inventory {
 
                 System.out.println("Please enter item number: ");
                 String userSelection = userInput.nextLine();
+
 
                 if(userSelection.equals(purchaseVending.getItemLocation())){
 
