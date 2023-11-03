@@ -64,7 +64,7 @@ public class PurchaseMenu extends Inventory {
                 if(item.getStock()>0&&customer.getBalance()>=item.getCost()) {
                     System.out.println(item.foodSound());
                     item.setStock(item.getStock() - 1);
-                    System.out.println("You received " + item.getName());
+                    System.out.println("You received " + item.getName()+" for "+item.getCost());
                     System.out.println("There is: " + item.getStock() + " left in stock");
                 }
 
@@ -83,6 +83,7 @@ public class PurchaseMenu extends Inventory {
 
                 // do purchase
             } else if (choice.equals(PURCHASE_FINISH_TRANSACTION)) {
+                System.out.println("Here is your change "+customer.getBalance());
                 break;
             }
         }
