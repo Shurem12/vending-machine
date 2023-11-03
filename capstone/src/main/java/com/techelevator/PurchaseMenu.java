@@ -84,6 +84,7 @@ public class PurchaseMenu extends Inventory {
                 // do purchase
             } else if (choice.equals(PURCHASE_FINISH_TRANSACTION)) {
                 System.out.println("Here is your change "+customer.getBalance());
+                customer.resetBalance();
                 break;
             }
         }

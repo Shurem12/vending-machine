@@ -34,4 +34,7 @@ private String selections;
         }
 
     }
+    public void resetBalance(){
+        balance =0.0;
+    }
 }
