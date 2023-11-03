@@ -75,7 +75,7 @@ public class Inventory {
                 listFood.add(new Chips(inv[0],inv[1],Double.parseDouble(inv[2])));
                 }else if(inv[3].equals("Candy")){
                     listFood.add(new Candy(inv[0],inv[1],Double.parseDouble(inv[2])));
-                }else if(inv[3].equals("Drinks")){
+                }else if(inv[3].equals("Drink")){
                     listFood.add(new Drinks(inv[0],inv[1],Double.parseDouble(inv[2])));
                 }else if(inv[3].equals("Gum")){
                     listFood.add(new Gum(inv[0],inv[1],Double.parseDouble(inv[2])));
