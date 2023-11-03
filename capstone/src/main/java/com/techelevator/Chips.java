@@ -7,4 +7,9 @@ public class Chips extends Food {
     public String foodSound(){
         return "Crunch Crunch, Yum!";
     }
+
+    public Chips(String location,String name, Double cost){
+        super(location,name,cost);
+
+    }
 }

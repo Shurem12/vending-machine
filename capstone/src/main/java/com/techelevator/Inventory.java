@@ -12,10 +12,20 @@ public class Inventory {
     private String itemLocation;
     private String itemName;
     private String itemCost;
-    private List<String> inventoryList = new ArrayList<>();
+    private List<String> itemListLocation = new ArrayList<>();
 
-    public List<String> getInventoryList() {
-        return inventoryList;
+    private List<Food> listFood = new ArrayList<>();
+    private List<String> itemListCost = new ArrayList<>();
+    private List<String> itemListName = new ArrayList<>();
+
+    public List<String> getItemListLocation() {
+        return itemListLocation;
+    }
+    public List<String> getItemListCost() {
+        return itemListCost;
+    }
+    public List<String> getItemListName() {
+        return itemListName;
     }
 
 
@@ -37,7 +47,9 @@ public class Inventory {
         return itemCost;
     }
 
-
+    public List<Food> getListFood() {
+        return listFood;
+    }
 
     String fileName = "vendingmachine.csv";
 
@@ -55,7 +67,19 @@ public class Inventory {
                 inv = line.split("\\|");
 
 
-               inventoryList.add(line);
+               itemListLocation.add(inv[0]);
+                itemListName.add(inv[1]);
+                itemListCost.add(inv[2]);
+
+                if(inv[3].equals("Chip")){
+                listFood.add(new Chips(inv[0],inv[1],Double.parseDouble(inv[2])));
+                }else if(inv[3].equals("Candy")){
+                    listFood.add(new Candy(inv[0],inv[1],Double.parseDouble(inv[2])));
+                }else if(inv[3].equals("Drinks")){
+                    listFood.add(new Drinks(inv[0],inv[1],Double.parseDouble(inv[2])));
+                }else if(inv[3].equals("Gum")){
+                    listFood.add(new Gum(inv[0],inv[1],Double.parseDouble(inv[2])));
+                }
 
 
                  itemLocation = inv[0];
@@ -80,6 +104,8 @@ public class Inventory {
         }
 
 
+
+
         /*
     }
     public String getItemLocation() {
@@ -98,4 +124,15 @@ public class Inventory {
 
 
     }
+
+    public Food findItem(String slotNum){
+        for(Food food: listFood){
+            if(food.getLocation().equals(slotNum)){
+                return food;
+            }
+        }return null;
+
+
+    }
+
 }

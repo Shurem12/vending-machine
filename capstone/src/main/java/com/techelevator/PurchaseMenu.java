@@ -16,6 +16,8 @@ public class PurchaseMenu extends Inventory {
     private Integer moneyInputTotal = 0;
     private final Scanner userInput = new Scanner(System.in);
     private Menu menu = new Menu(System.in, System.out);
+    private Food food = new Food();
+    private Inventory invList = new Inventory();
 
 
     //public PurchaseMenu(Menu menu) {
@@ -30,7 +32,7 @@ public class PurchaseMenu extends Inventory {
        // public void onEnter () {
 
 
-
+        invList.runInventory();
         while (true) {
             String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
@@ -52,6 +54,12 @@ public class PurchaseMenu extends Inventory {
 
                 System.out.println("Please enter item number: ");
                 String userSelection = userInput.nextLine();
+
+                Food item = invList.findItem(userSelection);
+                System.out.println(item.foodSound());
+                item.setStock(item.getStock()-1);
+                System.out.println(item.getName()+" "+item.getStock());
+
 
 
                 if(userSelection.equals(purchaseVending.getItemLocation())){
