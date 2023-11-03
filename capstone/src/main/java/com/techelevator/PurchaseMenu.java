@@ -90,9 +90,13 @@ public class PurchaseMenu extends Inventory {
                 }
 
 
+
                 // do purchase
             } else if (choice.equals(PURCHASE_FINISH_TRANSACTION)) {
-                System.out.println("Here is your change "+customer.getBalance());
+                int changeToInt = customer.getBalance().intValue();
+                customer.makeChange(changeToInt);
+                System.out.println("Here is your change total: " + customer.getBalance());
+                System.out.println("Here is your change in quarters: " + customer.getTotalQuarters() + " in dimes: " + customer.getTotalDimes() + " in nickles " + customer.getTotalNickles());
                 customer.resetBalance();
                 break;
             }
@@ -100,6 +104,7 @@ public class PurchaseMenu extends Inventory {
     }
 }
 
+// if(customer.getBalance()
 
 
 

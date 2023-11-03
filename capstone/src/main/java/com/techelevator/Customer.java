@@ -8,6 +8,27 @@ public class Customer {
 private Double balance;
 private String selections;
 
+    private Integer totalChange = 0;
+    private Integer totalQuarters = 0;
+    private Integer totalDimes = 0;
+    private Integer totalNickles = 0;
+
+    public Integer getTotalChange() {
+        return totalChange;
+    }
+
+    public Integer getTotalQuarters() {
+        return totalQuarters;
+    }
+
+    public Integer getTotalDimes() {
+        return totalDimes;
+    }
+
+    public Integer getTotalNickles() {
+        return totalNickles;
+    }
+
     public Double getBalance() {
         return balance;
     }
@@ -37,4 +58,25 @@ private String selections;
     public void resetBalance(){
         balance =0.0;
     }
+
+public void makeChange(int change){
+
+
+
+       Double coinValue =  balance * 100;
+       if(coinValue % 25 == 0){
+           totalQuarters = (int) (coinValue / 25);
+
+       } else if(coinValue % 10 == 0){
+           totalDimes = (int) (coinValue / 10);
+       } else if(coinValue % 5 == 0){
+           totalNickles = (int) (coinValue / 5);
+       }
+
+
+
+}
+
+
+
 }
