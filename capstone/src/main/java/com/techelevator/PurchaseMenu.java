@@ -3,6 +3,8 @@ package com.techelevator;
 import com.techelevator.view.Menu;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class PurchaseMenu extends Inventory {
@@ -22,6 +24,9 @@ public class PurchaseMenu extends Inventory {
 
     private VendingMachine vm= new VendingMachine();
     private Customer customer = new Customer();
+
+    String log = "Log.txt";
+    private File logFile = new File(log);
 
 
 
@@ -55,7 +60,20 @@ public class PurchaseMenu extends Inventory {
                     Double moneyInputNumber = Double.parseDouble(moneyInput);
                     customer.addMoney(moneyInputNumber);
 
+
+                        try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
+                            writer.print("Customer input: " + moneyInputNumber);
+                           // writer.println("Customer change back: " + customer.getBalance());
+                        } catch(Exception ex){
+                            System.out.println("Error printing to log.");
+                        }
+
+
+
+
                     System.out.println("Current available funds: " + customer.getBalance());
+
+
 
                 } else if(!(moneyInputDouble == 1) || !((moneyInputDouble % 2 == 0)) || !((moneyInputDouble % 3 == 0))){
                     System.out.println("Please enter whole dollar amounts.");
@@ -68,7 +86,20 @@ public class PurchaseMenu extends Inventory {
                 System.out.println("Please enter item number: ");
                 String userSelection = userInput.nextLine();
 
+
                 Food item = invList.findItem(userSelection);
+
+
+                try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
+                    // writer.println("Customer input: " + moneyInputNumber);
+                    writer.print(" Customer choice: " + userSelection + " " + item.getName());
+                } catch(Exception ex){
+                    System.out.println("Error printing to log.");
+                }
+
+
+
+
 
                 if (item.getStock() > 0){
                     if(customer.getBalance()>=item.getCost()) {
@@ -105,7 +136,32 @@ public class PurchaseMenu extends Inventory {
                 customer.makeChange(changeToInt);
                 System.out.println("Here is your change total: " + customer.getBalance());
                 System.out.println("Here is your change in quarters: " + customer.getTotalQuarters() + " in dimes: " + customer.getTotalDimes() + " in nickles: " + customer.getTotalNickles());
+
+                try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
+                   // writer.println("Customer input: " + moneyInputNumber);
+                    writer.print(" Customer change back: " + customer.getBalance());
+                } catch(Exception ex){
+                    System.out.println("Error printing to log.");
+                }
                 customer.resetBalance();
+
+                try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
+                    // writer.println("Customer input: " + moneyInputNumber);
+                    writer.println(" Total remaining: " + customer.getBalance());
+                } catch(Exception ex){
+                    System.out.print("Error printing to log.");
+                }
+
+
+                /*
+                try(PrintWriter writer = new PrintWriter("Log.txt")){
+                    writer.println(moneyInputTotal);
+                    writer.println(customer.getBalance());
+                } catch(Exception ex){
+                    System.out.println("Error printing to log.");
+                }
+
+                 */
                 break;
             }
         }

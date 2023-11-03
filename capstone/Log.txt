@@ -1,0 +1,20 @@
+0
+3.0
+0
+3.0
+Customer input: 3.0
+Customer change back: 3.0
+Customer change back: 0.0
+Customer input: 3.0
+Customer change back: 0.0
+Customer input: 3.0
+Customer change back: 1.5
+Total remaining: 0.0
+Customer input: 3.0
+ Customer change back: 1.5 Total remaining: 0.0
+Customer input: 4.0 Customer change back: 2.5 Total remaining: 0.0
+Customer input: 3.0 Customer choice: D4 Customer change back: 2.25 Total remaining: 0.0
+Customer input: 3.0 Customer choice: D2null Customer change back: 2.05 Total remaining: 0.0
+Customer input: 2.0 Customer choice: D1U-Chews Customer change back: 1.15 Total remaining: 0.0
+Customer input: 3.0 Customer choice: B1 Moonpie Customer change back: 1.2 Total remaining: 0.0
+Customer input: 3.0Customer input: 2.0 Customer choice: A1 Potato CrispsCustomer input: 1.0 Customer change back: 2.95 Total remaining: 0.0

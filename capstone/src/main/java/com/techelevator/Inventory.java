@@ -85,14 +85,6 @@ public class Inventory {
                  itemLocation = inv[0];
                  itemName = inv[1];
                  itemCost = inv[2];
-                // String itemType = inv[3];
-
-
-
-
-
-                //for(int i=1; i<inv.length;i++){
-                //System.out.println(itemLocation + " " + itemName + " " + itemCost + " " + "Available: " + totalAvailable.getStock());
 
 
             }
@@ -102,25 +94,6 @@ public class Inventory {
 
             System.out.println("Unable to read file.");
         }
-
-
-
-
-        /*
-    }
-    public String getItemLocation() {
-        return itemLocation;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public String getItemCost() {
-        return itemCost;
-    }
-
-         */
 
 
     }
