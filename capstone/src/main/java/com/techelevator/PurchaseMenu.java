@@ -62,19 +62,24 @@ public class PurchaseMenu extends Inventory {
 
                 Food item = invList.findItem(userSelection);
 
-                if(customer.getBalance()>=item.getCost()) {
+                if (item.getStock() > 0){
+                    if(customer.getBalance()>=item.getCost()) {
                     System.out.println(item.foodSound());
-                    if (item.getStock() > 0) {
-                        item.setStock(item.getStock() - 1);
-                    }
+                    item.setStock(item.getStock() - 1);
                     System.out.println("You received " + item.getName()+" for "+item.getCost());
                     System.out.println("There is: " + item.getStock() + " left in stock");
+                    customer.makePurchase(item.getCost());
+                    System.out.println("New balance: "+ customer.getBalance());
+                }else{
+                        System.out.println("Insufficient funds");
+                    }
+                }else{
+                    System.out.println("Item is out of stock");
+                    System.out.println("New balance: "+ customer.getBalance());
                 }
 
 
 
-                customer.makePurchase(item.getCost());
-                System.out.println("New balance: "+ customer.getBalance());
 
 
 
