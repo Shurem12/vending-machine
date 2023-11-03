@@ -20,6 +20,7 @@ public class PurchaseMenu extends Inventory {
     private Inventory invList = new Inventory();
 
     private VendingMachine vm= new VendingMachine();
+    private Customer customer = new Customer();
 
 
     //public PurchaseMenu(Menu menu) {
@@ -44,12 +45,13 @@ public class PurchaseMenu extends Inventory {
 
                 String moneyInput = userInput.nextLine();
 
-                Integer moneyInputNumber = Integer.parseInt(moneyInput);
+                Double moneyInputNumber = Double.parseDouble(moneyInput);
+                customer.addMoney(moneyInputNumber);
 
-                moneyInputTotal += moneyInputNumber;
 
 
-                System.out.println("Current available funds: " + moneyInputTotal);
+
+                System.out.println("Current available funds: " + customer.getBalance());
 
 
             } else if (choice.equals(PURCHASE_MENU_SELECT_PRODUCT)) {
@@ -59,9 +61,16 @@ public class PurchaseMenu extends Inventory {
                 String userSelection = userInput.nextLine();
 
                 Food item = invList.findItem(userSelection);
-                System.out.println(item.foodSound());
-                item.setStock(item.getStock()-1);
-                System.out.println(item.getName()+" "+item.getStock());
+                if(item.getStock()>0&&customer.getBalance()>=item.getCost()) {
+                    System.out.println(item.foodSound());
+                    item.setStock(item.getStock() - 1);
+                    System.out.println("You received " + item.getName());
+                    System.out.println("There is: " + item.getStock() + " left in stock");
+                }
+
+
+                customer.makePurchase(item.getCost());
+                System.out.println("New balance: "+ customer.getBalance());
 
 
 
