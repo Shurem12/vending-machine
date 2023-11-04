@@ -5,6 +5,8 @@ import com.techelevator.view.Menu;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class PurchaseMenu extends Inventory {
@@ -24,9 +26,12 @@ public class PurchaseMenu extends Inventory {
 
     private VendingMachine vm= new VendingMachine();
     private Customer customer = new Customer();
+    private Date currentDate = new Date();
 
     String log = "Log.txt";
     private File logFile = new File(log);
+    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss a");
+    String formattedDate = dateFormat.format(currentDate);
 
 
 
@@ -61,8 +66,8 @@ public class PurchaseMenu extends Inventory {
                     customer.addMoney(moneyInputNumber);
 
 
-                        try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
-                            writer.print("Customer input: " + moneyInputNumber);
+                        try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile))){
+                            writer.println(formattedDate+ " FEED MONEY: $" + moneyInputNumber+ " $"+customer.getBalance());
                            // writer.println("Customer change back: " + customer.getBalance());
                         } catch(Exception ex){
                             System.out.println("Error printing to log.");
@@ -87,15 +92,23 @@ public class PurchaseMenu extends Inventory {
                 String userSelection = userInput.nextLine();
 
 
+
+
                 Food item = invList.findItem(userSelection);
+                while("Invalid".equals(item.getLocation())||item.getLocation()==null){
 
+                if("Invalid".equals(item.getLocation())){
+                    System.out.println("Not valid input");
+                    System.out.println("Please enter item number: ");
+                    userSelection = userInput.nextLine();
+                    item = invList.findItem(userSelection);
 
-                try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
-                    // writer.println("Customer input: " + moneyInputNumber);
-                    writer.print(" Customer choice: " + userSelection + " " + item.getName());
-                } catch(Exception ex){
-                    System.out.println("Error printing to log.");
                 }
+
+                }
+
+
+
 
 
 
@@ -115,6 +128,12 @@ public class PurchaseMenu extends Inventory {
                 }else{
                     System.out.println("Item is out of stock");
                     System.out.println("New balance: "+ customer.getBalance());
+                }
+                try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
+                    // writer.println("Customer input: " + moneyInputNumber);
+                    writer.println(formattedDate+" "+ item.getName() + " " + userSelection+" "+ item.getCost()+" "+ customer.getBalance());
+                } catch(Exception ex){
+                    System.out.println("Error printing to log.");
                 }
 
 
@@ -139,7 +158,7 @@ public class PurchaseMenu extends Inventory {
 
                 try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
                    // writer.println("Customer input: " + moneyInputNumber);
-                    writer.print(" Customer change back: " + customer.getBalance());
+                    writer.print(formattedDate+ " GIVE CHANGE $" + customer.getBalance());
                 } catch(Exception ex){
                     System.out.println("Error printing to log.");
                 }
@@ -147,7 +166,7 @@ public class PurchaseMenu extends Inventory {
 
                 try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
                     // writer.println("Customer input: " + moneyInputNumber);
-                    writer.println(" Total remaining: " + customer.getBalance());
+                    writer.print(" $" + customer.getBalance());
                 } catch(Exception ex){
                     System.out.print("Error printing to log.");
                 }

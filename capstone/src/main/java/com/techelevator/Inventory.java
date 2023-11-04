@@ -99,11 +99,17 @@ public class Inventory {
     }
 
     public Food findItem(String slotNum){
+
         for(Food food: listFood){
             if(food.getLocation().equals(slotNum)){
                 return food;
             }
-        }return null;
+
+        }
+        Food notFound = new Food();
+        notFound.setLocation("Invalid");
+
+        return notFound;
 
 
     }
