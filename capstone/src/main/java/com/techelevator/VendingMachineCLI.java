@@ -2,19 +2,30 @@ package com.techelevator;
 
 import com.techelevator.view.Menu;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+
 public class VendingMachineCLI {
 
 	private static final String MAIN_MENU_OPTION_DISPLAY_ITEMS = "Display Vending Machine Items";
 	private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
 	private static final String MAIN_MENU_OPTION_EXIT = "Exit";
 
-	private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE,MAIN_MENU_OPTION_EXIT };
+	private static final String MAIN_MENU_OPTION_SECRET ="Shhhh";
+
+	private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE,MAIN_MENU_OPTION_EXIT, MAIN_MENU_OPTION_SECRET};
 
 	private Menu menu;
 
 	private PurchaseMenu pm = new PurchaseMenu();
 
 	private VendingMachine vm= new VendingMachine();
+
+
+
+	String sale = "Sale.txt";
+	private File saleFile = new File(sale);
 
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
@@ -38,6 +49,15 @@ public class VendingMachineCLI {
 			}
 			else if(choice.equals(MAIN_MENU_OPTION_EXIT)){
 				break;
+			}
+			else if(choice.equals(MAIN_MENU_OPTION_SECRET)){
+				try(PrintWriter writer = new PrintWriter(new FileOutputStream(saleFile))){
+					writer.println(pm.getItemListName());
+					// writer.println("Customer change back: " + customer.getBalance());
+				} catch(Exception ex){
+					System.out.println("Error printing to log.");
+				}
+
 			}
 		}
 	}
