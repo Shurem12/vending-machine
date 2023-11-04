@@ -118,6 +118,8 @@ public class PurchaseMenu extends Inventory {
                     if(customer.getBalance()>=item.getCost()) {
                     System.out.println(item.foodSound());
                     item.setStock(item.getStock() - 1);
+                    item.setStockSold(item.getStockSold()+1);
+                    item.setTotalSale(item.getTotalSale()+item.getCost());
                     System.out.println("You received " + item.getName()+" for "+item.getCost());
                     System.out.println("There is: " + item.getStock() + " left in stock");
                     customer.makePurchase(item.getCost());

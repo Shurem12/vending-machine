@@ -5,6 +5,7 @@ import com.techelevator.view.Menu;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.util.List;
 
 public class VendingMachineCLI {
 
@@ -21,6 +22,10 @@ public class VendingMachineCLI {
 	private PurchaseMenu pm = new PurchaseMenu();
 
 	private VendingMachine vm= new VendingMachine();
+	private Customer cm=new Customer();
+	private Inventory inventory = new Inventory();
+
+
 
 
 
@@ -51,10 +56,11 @@ public class VendingMachineCLI {
 				break;
 			}
 			else if(choice.equals(MAIN_MENU_OPTION_SECRET)){
-				try(PrintWriter writer = new PrintWriter(new FileOutputStream(saleFile))){
-					pm.runPurchase();
-					writer.println(pm.getItemName());
-					// writer.println("Customer change back: " + customer.getBalance());
+				try(PrintWriter writer = new PrintWriter(new FileOutputStream(saleFile,true))){
+					for(Food item : inventory.getListFood()){
+					writer.println(item.getName()+ " | "+ item.getStockSold());
+					}
+
 				} catch(Exception ex){
 					System.out.println("Error printing to log.");
 				}

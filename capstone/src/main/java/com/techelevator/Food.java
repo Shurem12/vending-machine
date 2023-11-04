@@ -8,6 +8,24 @@ public class Food {
     private String location;
     private String name;
     private Double cost;
+    private double totalSale;
+    private int stockSold;
+
+    public double getTotalSale() {
+        return totalSale;
+    }
+
+    public void setTotalSale(double totalSale) {
+        this.totalSale = totalSale;
+    }
+
+    public int getStockSold() {
+        return stockSold;
+    }
+
+    public void setStockSold(int stockSold) {
+        this.stockSold = stockSold;
+    }
 
     public String getMakeSound() {
         return makeSound;
@@ -59,6 +77,8 @@ public class Food {
         this.location=location;
         this.name=name;
         this.cost=cost;
+        this.totalSale =0;
+        this.stockSold=0;
     }
 
 //list array of all of the food items - location, price, amount left, name
