@@ -52,7 +52,8 @@ public class VendingMachineCLI {
 			}
 			else if(choice.equals(MAIN_MENU_OPTION_SECRET)){
 				try(PrintWriter writer = new PrintWriter(new FileOutputStream(saleFile))){
-					writer.println(pm.getItemListName());
+					pm.runPurchase();
+					writer.println(pm.getItemName());
 					// writer.println("Customer change back: " + customer.getBalance());
 				} catch(Exception ex){
 					System.out.println("Error printing to log.");
