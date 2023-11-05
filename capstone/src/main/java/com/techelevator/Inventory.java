@@ -13,6 +13,7 @@ public class Inventory {
     private String itemName;
     private String itemCost;
     private List<String> itemListLocation = new ArrayList<>();
+    private Food fd= new Food();
 
     private List<Food> listFood = new ArrayList<>();
     private List<String> itemListCost = new ArrayList<>();
@@ -80,6 +81,9 @@ public class Inventory {
                 }else if(inv[3].equals("Gum")){
                     listFood.add(new Gum(inv[0],inv[1],Double.parseDouble(inv[2])));
                 }
+
+                fd.setStockSold(5);
+
 
 
                  itemLocation = inv[0];

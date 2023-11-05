@@ -37,6 +37,8 @@ public class VendingMachineCLI {
 	}
 
 	public void run() {
+		inventory.runInventory();
+
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
@@ -60,6 +62,7 @@ public class VendingMachineCLI {
 					for(Food item : inventory.getListFood()){
 					writer.println(item.getName()+ " | "+ item.getStockSold());
 					}
+					writer.close();
 
 				} catch(Exception ex){
 					System.out.println("Error printing to log.");
