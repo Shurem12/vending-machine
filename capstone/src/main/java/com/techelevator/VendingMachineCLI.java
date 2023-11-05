@@ -60,7 +60,7 @@ public class VendingMachineCLI {
 			else if(choice.equals(MAIN_MENU_OPTION_SECRET)){
 				try(PrintWriter writer = new PrintWriter(new FileOutputStream(saleFile,true))){
 					for(Food item : inventory.getListFood()){
-					writer.println(item.getName()+ " | "+ item.getStock());
+					writer.println(item.getName()+ " | "+ item.getStockSold());
 					}
 
 
