@@ -15,3 +15,190 @@ U-Chews | 0
 Little League Chew | 0
 Chiclets | 0
 Triplemint | 0
+Potato Crisps | 0
+Stackers | 0
+Grain Waves | 0
+Cloud Popcorn | 0
+Moonpie | 0
+Cowtales | 0
+Wonka Bar | 0
+Crunchie | 0
+Cola | 0
+Dr. Salt | 0
+Mountain Melter | 0
+Heavy | 0
+U-Chews | 0
+Little League Chew | 0
+Chiclets | 0
+Triplemint | 0
+Potato Crisps | 0
+Stackers | 0
+Grain Waves | 0
+Cloud Popcorn | 0
+Moonpie | 0
+Cowtales | 0
+Wonka Bar | 0
+Crunchie | 0
+Cola | 0
+Dr. Salt | 0
+Mountain Melter | 0
+Heavy | 0
+U-Chews | 0
+Little League Chew | 0
+Chiclets | 0
+Triplemint | 0
+Potato Crisps | 0
+ 
+Test
+Stackers | 0
+ 
+Test
+Grain Waves | 0
+ 
+Test
+Cloud Popcorn | 0
+ 
+Test
+Moonpie | 0
+ 
+Test
+Cowtales | 0
+ 
+Test
+Wonka Bar | 0
+ 
+Test
+Crunchie | 0
+ 
+Test
+Cola | 0
+ 
+Test
+Dr. Salt | 0
+ 
+Test
+Mountain Melter | 0
+ 
+Test
+Heavy | 0
+ 
+Test
+U-Chews | 0
+ 
+Test
+Little League Chew | 0
+ 
+Test
+Chiclets | 0
+ 
+Test
+Triplemint | 0
+ 
+Test
+Potato Crisps | 0
+Stackers | 0
+Grain Waves | 0
+Cloud Popcorn | 0
+Moonpie | 0
+Cowtales | 0
+Wonka Bar | 0
+Crunchie | 0
+Cola | 0
+Dr. Salt | 0
+Mountain Melter | 0
+Heavy | 0
+U-Chews | 0
+Little League Chew | 0
+Chiclets | 0
+Triplemint | 0
+ 
+Test
+Potato Crisps | 0
+Stackers | 0
+Grain Waves | 0
+Cloud Popcorn | 0
+Moonpie | 0
+Cowtales | 0
+Wonka Bar | 0
+Crunchie | 0
+Cola | 0
+Dr. Salt | 0
+Mountain Melter | 0
+Heavy | 0
+U-Chews | 0
+Little League Chew | 0
+Chiclets | 0
+Triplemint | 0
+ 
+**TOTAL SALES** 26.500000000000004
+Potato Crisps | 0
+Stackers | 0
+Grain Waves | 0
+Cloud Popcorn | 0
+Moonpie | 0
+Cowtales | 0
+Wonka Bar | 0
+Crunchie | 0
+Cola | 0
+Dr. Salt | 0
+Mountain Melter | 0
+Heavy | 0
+U-Chews | 0
+Little League Chew | 0
+Chiclets | 0
+Triplemint | 0
+ 
+**TOTAL SALES** 0.0
+*****************
+Potato Crisps | 0
+*****************
+Stackers | 0
+*****************
+Grain Waves | 0
+*****************
+Cloud Popcorn | 0
+*****************
+Moonpie | 0
+*****************
+Cowtales | 0
+*****************
+Wonka Bar | 0
+*****************
+Crunchie | 0
+*****************
+Cola | 0
+*****************
+Dr. Salt | 0
+*****************
+Mountain Melter | 0
+*****************
+Heavy | 0
+*****************
+U-Chews | 0
+*****************
+Little League Chew | 0
+*****************
+Chiclets | 0
+*****************
+Triplemint | 0
+ 
+**TOTAL SALES** 0.0
+*****************
+Potato Crisps | 0
+Stackers | 0
+Grain Waves | 0
+Cloud Popcorn | 0
+Moonpie | 0
+Cowtales | 0
+Wonka Bar | 0
+Crunchie | 0
+Cola | 0
+Dr. Salt | 0
+Mountain Melter | 0
+Heavy | 0
+U-Chews | 0
+Little League Chew | 0
+Chiclets | 0
+Triplemint | 0
+ 
+**TOTAL SALES** 0.0

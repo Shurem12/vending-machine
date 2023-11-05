@@ -162,7 +162,7 @@ public class PurchaseMenu extends Inventory {
 
                 try(PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))){
                    // writer.println("Customer input: " + moneyInputNumber);
-                    writer.print(formattedDate+ " GIVE CHANGE $" + customer.getBalance());
+                    writer.print(formattedDate + " GIVE CHANGE $" + customer.getBalance());
                 } catch(Exception ex){
                     System.out.println("Error printing to log.");
                 }

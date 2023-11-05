@@ -24,6 +24,7 @@ public class VendingMachineCLI {
 	private VendingMachine vm= new VendingMachine();
 	private Customer cm=new Customer();
 	private Inventory inventory = new Inventory();
+	private Food food = new Food();
 
 
 
@@ -59,10 +60,18 @@ public class VendingMachineCLI {
 			}
 			else if(choice.equals(MAIN_MENU_OPTION_SECRET)){
 				try(PrintWriter writer = new PrintWriter(new FileOutputStream(saleFile,true))){
-					for(Food item : inventory.getListFood()){
-					writer.println(item.getName()+ " | "+ item.getStockSold());
-					}
+					Double totalItemCost = 0.0;
+					writer.println("*****************");
 
+					for(Food item : inventory.getListFood()){
+
+					writer.println(item.getName() + " | " + food.getStockSold());
+
+					totalItemCost += (item.getCost() * food.getStockSold());
+
+					}
+					writer.println(" ");
+					writer.println("**TOTAL SALES** " + totalItemCost);
 
 				} catch(Exception ex){
 					System.out.println("Error printing to log.");
