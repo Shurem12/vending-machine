@@ -28,6 +28,8 @@ public class PurchaseMenu extends Inventory {
     private Customer customer = new Customer();
     private Date currentDate = new Date();
 
+
+
     String log = "Log.txt";
     private File logFile = new File(log);
     SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss a");
