@@ -60,9 +60,9 @@ public class VendingMachineCLI {
 			else if(choice.equals(MAIN_MENU_OPTION_SECRET)){
 				try(PrintWriter writer = new PrintWriter(new FileOutputStream(saleFile,true))){
 					for(Food item : inventory.getListFood()){
-					writer.println(item.getName()+ " | "+ item.getStockSold());
+					writer.println(item.getName()+ " | "+ item.getStock());
 					}
-					writer.close();
+
 
 				} catch(Exception ex){
 					System.out.println("Error printing to log.");

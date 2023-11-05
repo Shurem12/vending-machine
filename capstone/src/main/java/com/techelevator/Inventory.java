@@ -13,7 +13,6 @@ public class Inventory {
     private String itemName;
     private String itemCost;
     private List<String> itemListLocation = new ArrayList<>();
-    private Food fd= new Food();
 
     private List<Food> listFood = new ArrayList<>();
     private List<String> itemListCost = new ArrayList<>();
@@ -71,18 +70,20 @@ public class Inventory {
                itemListLocation.add(inv[0]);
                 itemListName.add(inv[1]);
                 itemListCost.add(inv[2]);
+                int defaultStock =5;
+
 
                 if(inv[3].equals("Chip")){
-                listFood.add(new Chips(inv[0],inv[1],Double.parseDouble(inv[2])));
+                listFood.add(new Chips(inv[0],inv[1],Double.parseDouble(inv[2]),defaultStock));
                 }else if(inv[3].equals("Candy")){
-                    listFood.add(new Candy(inv[0],inv[1],Double.parseDouble(inv[2])));
+                    listFood.add(new Candy(inv[0],inv[1],Double.parseDouble(inv[2]),defaultStock));
                 }else if(inv[3].equals("Drink")){
-                    listFood.add(new Drinks(inv[0],inv[1],Double.parseDouble(inv[2])));
+                    listFood.add(new Drinks(inv[0],inv[1],Double.parseDouble(inv[2]),defaultStock));
                 }else if(inv[3].equals("Gum")){
-                    listFood.add(new Gum(inv[0],inv[1],Double.parseDouble(inv[2])));
+                    listFood.add(new Gum(inv[0],inv[1],Double.parseDouble(inv[2]),defaultStock));
                 }
 
-                fd.setStockSold(5);
+
 
 
 
@@ -92,6 +93,7 @@ public class Inventory {
 
 
             }
+
 
 
         } catch (Exception ex) {

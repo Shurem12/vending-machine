@@ -8,8 +8,8 @@ public class Chips extends Food {
         return "Crunch Crunch, Yum!";
     }
 
-    public Chips(String location,String name, Double cost){
-        super(location,name,cost);
+    public Chips(String location,String name, Double cost, int stock){
+        super(location,name,cost,stock);
 
     }
 }

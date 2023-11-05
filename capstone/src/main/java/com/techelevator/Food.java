@@ -73,10 +73,11 @@ public class Food {
 
     }
 
-    public Food(String location,String name, Double cost){
+    public Food(String location,String name, Double cost, int stock){
         this.location=location;
         this.name=name;
         this.cost=cost;
+        this.stock=stock;
         this.totalSale =0;
         this.stockSold=0;
     }
