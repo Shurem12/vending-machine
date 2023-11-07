@@ -7,21 +7,21 @@ import java.util.Scanner;
 public class VendingMachine extends Inventory {
 
 
-   private Food totalAvailable = new Food();
+    private Food totalAvailable = new Food();
 
 
     public void runInventory() {
 
 
-                 super.runInventory();
+        super.runInventory();
 
-               for(int i = 0; i < getItemListLocation().size(); i++) {
+        for (int i = 0; i < getItemListLocation().size(); i++) {
 
-                   System.out.println(getItemListLocation().get(i)+" "+getItemListName().get(i)+" "+getItemListCost().get(i));
+            System.out.println(getItemListLocation().get(i) + " " + getItemListName().get(i) + " " + getItemListCost().get(i));
 
-               }
+        }
 
-            }
+    }
 
 }
 

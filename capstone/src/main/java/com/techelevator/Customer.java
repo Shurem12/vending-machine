@@ -5,8 +5,8 @@ public class Customer {
     //how much money they put in
     //change
     //selection
-private Double balance;
-private String selections;
+    private Double balance;
+    private String selections;
 
     private Integer totalChange = 0;
     private Integer totalQuarters = 0;
@@ -40,48 +40,50 @@ private String selections;
     public void setSelections(String selections) {
         this.selections = selections;
     }
-    public Customer(){
+
+    public Customer() {
         balance = 0.0;
     }
-    public void addMoney(Double money){
-        balance+=money;
+
+    public void addMoney(Double money) {
+        balance += money;
 
     }
-    public void makePurchase(Double cost){
-        if(balance>=cost){
-            balance-=cost;
-        }else{
+
+    public void makePurchase(Double cost) {
+        if (balance >= cost) {
+            balance -= cost;
+        } else {
             System.out.println("You do not have enough money");
         }
 
     }
-    public void resetBalance(){
-        balance =0.0;
+
+    public void resetBalance() {
+        balance = 0.0;
     }
 
-public void makeChange(int change){
+    public void makeChange(int change) {
 
 
+        Double coinValue = balance * 100;
+        while (coinValue >= 25) {
+            coinValue -= 25;
+            totalQuarters++;
+        }
+        while (coinValue >= 10) {
 
-       Double coinValue =  balance * 100;
-       while(coinValue >= 25){
-           coinValue -= 25;
-           totalQuarters++;
-       } while(coinValue >= 10){
+            coinValue -= 10;
+            totalDimes++;
 
-           coinValue -= 10;
-           totalDimes++;
-
-       } while(coinValue >= 5){
-           coinValue -= 5;
-           totalNickles++;
-       }
+        }
+        while (coinValue >= 5) {
+            coinValue -= 5;
+            totalNickles++;
+        }
 
 
-
-
-}
-
+    }
 
 
 }

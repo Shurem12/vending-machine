@@ -34,7 +34,8 @@ public class Food {
     public int getStock() {
         return stock;
     }
-    public String foodSound(){
+
+    public String foodSound() {
         return "Make a Sound";
     }
 
@@ -69,21 +70,21 @@ public class Food {
     public void setCost(Double cost) {
         this.cost = cost;
     }
-    public Food(){
+
+    public Food() {
 
     }
 
-    public Food(String location,String name, Double cost, int stock){
-        this.location=location;
-        this.name=name;
-        this.cost=cost;
-        this.stock=stock;
-        this.totalSale =0;
-        this.stockSold=0;
+    public Food(String location, String name, Double cost, int stock) {
+        this.location = location;
+        this.name = name;
+        this.cost = cost;
+        this.stock = stock;
+        this.totalSale = 0;
+        this.stockSold = 0;
     }
 
 //list array of all of the food items - location, price, amount left, name
-
 
 
 }
