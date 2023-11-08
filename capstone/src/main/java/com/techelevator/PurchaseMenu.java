@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class PurchaseMenu extends Inventory {
+public class PurchaseMenu {
 
     private static final String PURCHASE_MENU_FEED_MONEY = "Feed money";
     private static final String PURCHASE_MENU_SELECT_PRODUCT = "Select product";
@@ -22,7 +22,7 @@ public class PurchaseMenu extends Inventory {
     private final Scanner userInput = new Scanner(System.in);
     private Menu menu = new Menu(System.in, System.out);
     private Food food = new Food();
-    private Inventory invList = new Inventory();
+    private Inventory invList;
 
     private VendingMachine vm = new VendingMachine();
     private Customer customer = new Customer();
@@ -43,8 +43,11 @@ public class PurchaseMenu extends Inventory {
 
     }
 
+    public PurchaseMenu(Inventory inv){
+        this.invList = inv;
+    }
+
     public void runPurchase() {
-        // public void onEnter () {
 
 
         invList.runInventory();

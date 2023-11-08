@@ -19,13 +19,13 @@ public class VendingMachineCLI {
 
     private Menu menu;
 
-    private PurchaseMenu pm = new PurchaseMenu();
+
 
     private VendingMachine vm = new VendingMachine();
     private Customer cm = new Customer();
     private Inventory inventory = new Inventory();
     private Food food = new Food();
-
+    private PurchaseMenu pm = new PurchaseMenu(inventory);
 
     String sale = "Sale.txt";
     private File saleFile = new File(sale);
@@ -60,9 +60,9 @@ public class VendingMachineCLI {
 
                     for (Food item : inventory.getListFood()) {
 
-                        writer.println(item.getName() + " | " + (item.getStock()-item.getStockSold()));
+                        writer.println(item.getName() + " | " + (item.getStockSold()));
 
-                        totalItemCost += (item.getCost() * (item.getStock()-item.getStockSold()));
+                        totalItemCost += (item.getCost() * (item.getStockSold()));
 
                     }
                     writer.println(" ");
